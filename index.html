@@ -36,6 +36,10 @@
 
 <body>
 	<div id="app">
+		<g-input value="哈哈"></g-input>
+		<g-input value="呵呵" disabled></g-input>
+		<g-input value="嘿嘿" readonly></g-input>
+		<br>
 		<g-button :loading="loading1" @click="loading1 = !loading1">我爱html</g-button>
 		<g-button :loading="loading2" icon="settings" @click="loading2 = !loading2">我爱css</g-button>
 		<g-button :loading="loading3" icon="settings" icon-position="right" @click="loading3 = !loading3">我爱js</g-button>
