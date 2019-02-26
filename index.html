@@ -41,13 +41,8 @@
 
 <body>
 	<div id="app">
-		<div class="box">
-			<g-input value="哈哈"></g-input>
-			<g-input value="呵呵" disabled></g-input>
-			<g-input value="嘿嘿" readonly></g-input>
-		</div>
-		<div class="box">
-			<g-input value="嘻嘻" error="姓名不能少于两个字"></g-input>
+			<div class="box">
+			<g-input value="嘻嘻" @change="inputChange"></g-input>
 		</div>
 		<div class="box">
 			<g-button :loading="loading1" @click="loading1 = !loading1">我爱html</g-button>

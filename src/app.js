@@ -16,6 +16,19 @@ new Vue({
 		loading1: false,
 		loading2: true,
 		loading3: false
+	},
+	created() {
+		setTimeout(() => {
+			let event = new Event('change');
+			let inputElement = this.$el.querySelector('input')
+			inputElement.dispatchEvent(event)
+			console.log('hi')
+		}, 3000)
+	},
+	methods: {
+		inputChange(e) {
+			console.log(e)
+		}
 	}
 })
 
@@ -39,8 +52,7 @@ const expect = chai.expect
 	expect(href).to.eq('#i-settings')
 	vm.$el.remove()
 	vm.$destroy()
-}
-{
+} {
 	const Constructor = Vue.extend(Button)
 	const vm = new Constructor({
 		propsData: {
@@ -54,8 +66,7 @@ const expect = chai.expect
 	expect(href).to.eq('#i-loading')
 	vm.$el.remove()
 	vm.$destroy()
-} 
-{
+} {
 	const div = document.createElement('div')
 	document.body.appendChild(div)
 	const Constructor = Vue.extend(Button)
@@ -72,8 +83,7 @@ const expect = chai.expect
 	expect(order).to.eq('1')
 	vm.$el.remove()
 	vm.$destroy()
-} 
-{
+} {
 	const div = document.createElement('div')
 	document.body.appendChild(div)
 	const Constructor = Vue.extend(Button)
@@ -91,8 +101,7 @@ const expect = chai.expect
 	expect(order).to.eq('2')
 	vm.$el.remove()
 	vm.$destroy()
-} 
-{
+} {
 	const Constructor = Vue.extend(Button)
 	const vm = new Constructor({
 		propsData: {
@@ -100,8 +109,8 @@ const expect = chai.expect
 		}
 	})
 	vm.$mount()
-	let spy = chai.spy(function(){})
-  	vm.$on('click', spy)
+	let spy = chai.spy(function () {})
+	vm.$on('click', spy)
 	// 希望这个函数被执行
 	let button = vm.$el
 	button.click()
