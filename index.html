@@ -57,6 +57,22 @@
 			</g-button-group>
 		</div>
 		<div id="test"></div>
+
+		<g-tabs :selected.sync="selectedTab">
+			<g-tabs-head>
+				<template slot="actions">
+					<button>设置</button>
+				</template>
+				<g-tabs-item name="mv"><g-icon name="settings"></g-icon>美女</g-tabs-item>
+				<g-tabs-item name="ty">体育</g-tabs-item>
+				<g-tabs-item name="cj">财经</g-tabs-item>
+			</g-tabs-head>
+			<g-tabs-body>
+				<g-tabs-pane name="mv">美女相关资讯</g-tabs-pane>
+				<g-tabs-pane name="ty">体育相关资讯</g-tabs-pane>
+				<g-tabs-pane name="cj">财经相关资讯</g-tabs-pane>
+			</g-tabs-body>
+		</g-tabs>
 	</div>
 
 	<script src="./src/app.js"></script>
